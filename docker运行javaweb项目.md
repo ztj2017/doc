@@ -14,5 +14,5 @@
 
 # 思路
   创建2个容器 一个是数据库容器，一个是java+tomcat容器(可以自己制作容器，commit成镜像，也可以直接pull tomcat，自带java)
-  ## mysql容器
+  ## 创建mysql容器
     docker run --name mysql_container -p 10001:3306 -e MYSQL_ROOT_PASSWORD=123 -d
