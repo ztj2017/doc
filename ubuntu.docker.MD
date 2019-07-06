@@ -1,6 +1,9 @@
-## 什么是Docker
+# 什么是Docker
 Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. The use of Linux containers to deploy applications is called containerization. Containers are not new, but their use for easily deploying applicatio
 Docker是一个供开发人员和系统管理员使用容器开发、部署和运行应用程序的平台。使用Linux容器部署应用程序称为容器化。容器并不新鲜，但是它们用于方便地部署应用程序却是新鲜的
+
+一副图简单了解下docker的布局，它是虚拟的，docker分为私服、镜像、容器三个模块
+ 一般从私服pull镜像，镜像run一个容器，我们把容器作为一个虚拟服务，里面可以独立运行进程有独立的内网Ip，通常把tomcat、工程挂到容器中运行
 
 ![](images/1182892-20170617111745775-1287381399.png)
 
