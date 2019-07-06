@@ -75,3 +75,14 @@ $ docker container stop <Container NAME or ID\>
 $ docker search {keyword}}
 ## 下载镜像
 docker pull {image_name}[:latest]
+
+# 相关命令
+docker ps    #查看运行的容器
+docker ps -a  #查看 所有容器
+
+docker start 容器Id      #启动容器
+docker restart 容器id    #重启
+docker stop  容器id      #停止容器
+docker rm  容器id        #删除容器
+docker rmi 镜像id        #删除镜像
+
