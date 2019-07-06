@@ -77,8 +77,8 @@ $ docker search {keyword}}
 ## 下载镜像
 docker pull {image_name}[:latest]
 
-# 相关命令
-docker ps    #查看运行的容器
+# 容器相关命令
+docker ps    #查看运行的容器\n
 docker ps -a  #查看 所有容器
 docker start 容器Id      #启动容器
 docker restart 容器id    #重启
