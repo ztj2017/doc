@@ -56,11 +56,12 @@ $ docker images
 $ docker image ls
 
 ## 运行应用程序,将计算机的端口4000映射到容器的已发布端口80
-
+## docker run就是创建容器
 $ docker run -p 4000:80 {image_name}
 
 ## use curl test published url
 $ curl http://localhost:4000
+
 ## 以分离模式运行docker app，后台运行
 $ docker run -d -p 4000:80 {image_name}
 
@@ -79,7 +80,6 @@ docker pull {image_name}[:latest]
 # 相关命令
 docker ps    #查看运行的容器
 docker ps -a  #查看 所有容器
-
 docker start 容器Id      #启动容器
 docker restart 容器id    #重启
 docker stop  容器id      #停止容器
