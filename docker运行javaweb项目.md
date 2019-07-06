@@ -11,3 +11,8 @@
 
  ## 向容器内拷贝
   docker cp  文件名称  容器id : 容器下的路径
+
+# 思路
+  创建2个容器 一个是数据库容器，一个是java+tomcat容器
+  ## mysql容器
+    docker run --name mysql_container -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123 -d
