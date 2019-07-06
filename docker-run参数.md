@@ -10,3 +10,6 @@
 #我的相关程序都在当前机器的/data/software/目录下，并且想把它挂载到容器的相同目录下：
 
 > sudo docker run -i -t -v /data/software/:/data/software/ ae983d5e88ce /bin/bash
+
+## 向容器内拷贝
+ docker cp  文件名称  容器id : 容器下的路径
