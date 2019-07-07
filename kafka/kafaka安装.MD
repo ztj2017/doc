@@ -25,6 +25,8 @@ Partition的引入就是解决水平扩展问题的一个方案。
 ## 具体来讲，> 每一个topic均被分成多个互不重复的partition >，其中每个partition均被放在一个或多个broker服务器上，这样就提供了容错。如果数据在不同的patition上，那么他们的访问将可能由不同的broker服务器来完成，这样就实现了并发访问。*分区的信息储存在Zookeeper上。*
 ## 所以，分区是kafka用来提供并发访问控制的一个概念。
 
+![](../images/v2_hd.jpg)
+
 
 # Zookeeper 在 Kafka 中的作用
 ## 1、Broker注册
