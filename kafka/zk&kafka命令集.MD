@@ -4,7 +4,8 @@
 > ./zkCli.sh -server 127.0.0.1:2181  
 
 ## 分离模式启动kafka服务端，使用server.properties配置文件
-> ./kafka-server-start.sh ../config/server.properties & 
+> ./kafka-server-start.sh ../config/server.properties &  (退出终端或者当前用户则任务结束，如关闭xshell连接断了，kafka服务也会结束)
+>  nohup ./kafka-server-start.sh ../config/server.properties  & （永远后台运行，标准输出在当前目录nohup.out文件，不加& 不能接受标准输入）
 
 ## 创建一个topic,并指定分区个数和复制因子
 > ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
