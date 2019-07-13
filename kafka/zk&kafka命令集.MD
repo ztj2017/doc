@@ -17,6 +17,7 @@
 
 ## 搭建集群
 > config/server-1.properties:
+
     broker.id=1
     
     listeners=PLAINTEXT://192.168.17.128:9093
@@ -25,6 +26,7 @@
  
  
 > config/server-2.properties:
+
     broker.id=2
     
     listeners=PLAINTEXT://192.168.17.128:9094
