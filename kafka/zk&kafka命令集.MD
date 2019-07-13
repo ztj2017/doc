@@ -23,7 +23,9 @@
 
     broker.id=1
     
-    listeners=PLAINTEXT://192.168.17.128:9093
+    listeners=PLAINTEXT://192.168.17.128:9093   （vmware创建的虚拟机的ip，相当于内网ip）
+    
+    advertised.listeners=PLAINTEXT://192.168.1.8:9093 （客户端生产者和消费者访问kafka的ip，192.168.1.8相当于外网ip）
     
     log.dir=/tmp/kafka-logs-1
  
@@ -33,5 +35,7 @@
     broker.id=2
     
     listeners=PLAINTEXT://192.168.17.128:9094
+    
+    advertised.listeners=PLAINTEXT://192.168.1.8:9094
     
     log.dir=/tmp/kafka-logs-2
