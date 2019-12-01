@@ -1,6 +1,6 @@
 1. 下载decp unix版本, chomd +x decp
-2. 安装open JDK 8 [参考]()
-2.安装awx-cli
+2. 安装open JDK 8 [参考](https://github.com/ztj2017/doc/blob/master/%E5%AE%89%E8%A3%85java1.8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+3.安装awx-cli
    pip install awscli --upgrade --user
    验证 aws --version
    添加环境变量
@@ -11,8 +11,8 @@
         AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
         Default region name [None]: us-east-1
         Default output format [None]: json
-3. 安装docker-ce [参考](https://github.com/ztj2017/doc/blob/master/ubuntu.docker.MD)
-4.安装jenkins
+4. 安装docker-ce [参考](https://github.com/ztj2017/doc/blob/master/ubuntu.docker.MD)
+5.安装jenkins
    1).添加官方软件仓库的秘钥到本地的apt秘钥中
       wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
    2).将地址添加进本地的软件源列表
@@ -27,8 +27,10 @@
    5).访问Jenkins服务
       在浏览器地址栏输入http://IP:8080/ 就可以访问
 
-5. 安装maven
+6. 安装maven
    添加PATH 和CLASSPATH
    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/mysql/bin:/opt/apache-maven-3.6.2/bin:~/.local/bin"
    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
    CLASSPATH=.:/usr/lib/jvm/java-8-openjdk-amd64/lib:/opt/apache-maven-3.6.2/lib
+ 7. 配置jenkins
+   在系统配置--》全局工具配置中，指定 jdk git maven docker等命令的目录
