@@ -1,1 +1,13 @@
-
+1. 下载decp unix版本, chomd +x decp
+2.安装awx-cli
+   pip install awscli --upgrade --user
+   验证 aws --version
+   添加环境变量
+   将~/.local/bin添加到/etc/environment文件path中
+   配置 AWS CLI (生成~/.aws/目录)
+    $ aws configure
+        AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+        AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+        Default region name [None]: us-east-1
+        Default output format [None]: json
+3. 安装docker-ce
