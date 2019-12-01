@@ -1,0 +1,40 @@
+安装open JDK8 时遇到问题：
+
+$ sudo apt-get install openjdk-8-jdk
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package openjdk-8-jdk
+多数是因为apt更新源的问题，更新一下源就ok了
+
+$ sudo add-apt-repository ppa:openjdk-r/ppa
+$ sudo apt-get update
+$ sudo apt-get install openjdk-8-jdk
+
+多个jdk切换方法
+首先我们看下系统已经安装的或在用的JDK
+
+$ update-java-alternatives -l
+java-1.7.0-openjdk-amd64 1071 /usr/lib/jvm/java-1.7.0-openjdk-amd64
+现在安装jdk8之后变成
+
+$ update-java-alternatives -l
+java-1.7.0-openjdk-amd64 1071 /usr/lib/jvm/java-1.7.0-openjdk-amd64
+java-1.8.0-openjdk-amd64 1069 /usr/lib/jvm/java-1.8.0-openjdk-amd64
+下面我们用“update-alternatives --config java” 指令切换默认jdk
+
+$ sudo update-alternatives --config java
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      auto mode
+  1            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      manual mode
+* 2            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1069      manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+选择你要使用的JDK：比如1然后回车java就ok了，同上方法将javac、javap、javadoc更换即可：
+
+$ sudo update-alternatives --config javac
+$ sudo update-alternatives --config javap
+$ sudo update-alternatives --config javadoc
