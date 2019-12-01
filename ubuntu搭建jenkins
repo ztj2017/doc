@@ -35,3 +35,24 @@
  7. 配置jenkins
    在系统配置--》全局工具配置中，指定 jdk git maven docker等命令的目录
    配置git 添加ssh key [参考](https://blog.csdn.net/xb12369/article/details/78682018)
+   
+   构建前脚本：
+   #!/bin/bash
+
+   dos2unix customerportal-core/src/main/commands/launch.sh
+   echo "change spring.profiles.active to $enviroment"
+   sed -i "s/active:.*/active: $enviroment/g" customerportal-core/src/main/resources/application.yml
+   
+   构建后脚本
+   #!/bin/bash
+   echo "image build success."
+   docker tag msd-cp-customerpotal 219919340901.dkr.ecr.us-east-1.amazonaws.com/msd-cp-customerportal
+   echo "login aws cer"
+   $(aws ecr get-login --region us-east-1 --no-include-email | sed "s/595878661657.dkr.ecr.us-east-1.amazonaws.com/219919340901.dkr.ecr.us-east-1.amazonaws.com/g")
+   echo "push image"
+   digest=`docker push 219919340901.dkr.ecr.us-east-1.amazonaws.com/msd-cp-customerportal | grep "image: ecr:msd-cp-customerportal@sha256" | awk -F: '{print $4}'`
+   echo "change descriptor.yaml"
+   sed -i "s/msd-cp-customerportal@sha256:.*/msd-cp-customerportal@sha256:$digest/g" customerportal-core/src/main/resources/descriptor.yaml
+   /opt/ztj/decp undeploy $paltform msd-cp-customerportal -p test
+   /opt/ztj/decp deploy $paltform customerportal-core/src/main/resources/descriptor.yaml -p test
+
