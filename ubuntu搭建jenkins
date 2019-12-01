@@ -33,6 +33,7 @@
    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
    CLASSPATH=.:/usr/lib/jvm/java-8-openjdk-amd64/lib:/opt/apache-maven-3.6.2/lib
  7. 配置jenkins
+   在后台 /etc/default/jenkins修改jenkins以root用户运行，然后重启
    在系统配置--》全局工具配置中，指定 jdk git maven docker等命令的目录
    配置git 添加ssh key [参考](https://blog.csdn.net/xb12369/article/details/78682018)
    
